@@ -24,7 +24,7 @@ namespace WPFBoosterPick
         public MainWindow()
         {
             InitializeComponent();
-            (Resources["AnimImg"] as Storyboard).Completed += new EventHandler(Refresh_anim);
+            (Resources["AnimBooster"] as Storyboard).Completed += new EventHandler(Refresh_anim);
             (Resources["AnimPulse"] as Storyboard).Completed += Pulse_Completed;
         }
 
@@ -35,7 +35,7 @@ namespace WPFBoosterPick
 
         private void Refresh_anim(object sender, EventArgs e)
         {
-            (Resources["AnimImg"] as Storyboard).Begin();
+            (Resources["AnimBooster"] as Storyboard).Begin();
         }
     }
 }

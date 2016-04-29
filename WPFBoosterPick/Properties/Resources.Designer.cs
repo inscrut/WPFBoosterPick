@@ -63,6 +63,16 @@ namespace WPFBoosterPick.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Booster {
             get {
                 object obj = ResourceManager.GetObject("Booster", resourceCulture);

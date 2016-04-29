@@ -8,7 +8,7 @@
         Background="Black"
         Title="WPFBoosterPick" Height="400" Width="390">
     <Window.Resources>
-        <Storyboard x:Key="AnimImg">
+        <Storyboard x:Key="AnimBooster">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="image">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:5" Value="-15"/>
@@ -20,18 +20,17 @@
         <Storyboard x:Key="AnimPulse">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="image">
                 <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="100"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="100"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="90"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:2" Value="90"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image3">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
-        <Storyboard x:Key="Born">
+        <Storyboard x:Key="LightLogo">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="image1">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-18"/>
@@ -55,7 +54,7 @@
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="image2">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-3.259"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-2.494"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
@@ -68,14 +67,15 @@
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <BeginStoryboard x:Name="AnimImg_BeginStoryboard" Storyboard="{StaticResource AnimImg}"/>
+            <BeginStoryboard x:Name="AnimBooster_BeginStoryboard" Storyboard="{StaticResource AnimBooster}"/>
             <BeginStoryboard Storyboard="{StaticResource AnimPulse}"/>
-            <BeginStoryboard Storyboard="{StaticResource Born}"/>
+            <BeginStoryboard x:Name="LightLogo_BeginStoryboard" Storyboard="{StaticResource LightLogo}"/>
         </EventTrigger>
     </Window.Triggers>
     <Grid>
-        <Image x:Name="image3" Source="Resources/Light.png" Margin="0,0,0,160" HorizontalAlignment="Center" VerticalAlignment="Center" Height="322" Opacity="0"></Image>
-        <Image x:Name="image" Source="Resources/Booster.png" Height="100" VerticalAlignment="Center" Style="{DynamicResource ImageStyle}" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="Width" HorizontalAlignment="Center" Opacity="0.85" Margin="0,0,0,155">
+        <Image Source="Resources/background.jpg" Margin="-77.476,0,-146.236,10" HorizontalAlignment="Left" Width="605.712"/>
+        <Image x:Name="image3" Source="Resources/Light.png" Margin="-115.61,82.637,144.389,-34.637" Opacity="0" d:LayoutOverrides="Width"/>
+        <Image x:Name="image" Source="Resources/Booster.png" Height="90" VerticalAlignment="Bottom" Style="{DynamicResource ImageStyle}" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Opacity="0.85" Margin="25,0,0,80">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
