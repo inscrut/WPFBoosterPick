@@ -9,40 +9,6 @@
         Title="WPFBoosterPick" Height="400" Width="390"
         ResizeMode="CanMinimize">
     <Window.Resources>
-        <Storyboard x:Key="AnimBooster">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="image">
-                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:5" Value="-15"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:10" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:15" Value="15"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:20" Value="0"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-        <Storyboard x:Key="AnimPulse">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="image">
-                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="90"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="70"/>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image3">
-                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="image3">
-                <EasingDoubleKeyFrame KeyTime="0" Value="4.365"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="10.912"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="3.491"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="3.273"/>
-            </DoubleAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="image3">
-                <EasingDoubleKeyFrame KeyTime="0" Value="10.912"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="11.131"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="12.004"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
         <Storyboard x:Key="LightLogo">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="image1">
                 <EasingDoubleKeyFrame KeyTime="0" Value="-27.282"/>
@@ -85,32 +51,11 @@
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <BeginStoryboard x:Name="AnimBooster_BeginStoryboard" Storyboard="{StaticResource AnimBooster}"/>
             <BeginStoryboard x:Name="LightLogo_BeginStoryboard" Storyboard="{StaticResource LightLogo}"/>
         </EventTrigger>
     </Window.Triggers>
     <Grid>
         <Image Source="Resources/background.jpg" Margin="-77,0,-143,0" HorizontalAlignment="Left" Width="604"/>
-        <Image x:Name="image3" Source="Resources/Light.png" Margin="-122.16,72.182,150.933,-24.182" Opacity="0" d:LayoutOverrides="Width" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
-        <Image x:Name="image" Source="Resources/Booster.png" Height="70" VerticalAlignment="Bottom" Style="{DynamicResource ImageStyle}" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Margin="30,0,0,90">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,10,0,0">
             <TextBlock x:Name="textBlock" Height="30" TextWrapping="Wrap" Text="Эпических карт:" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="250" Foreground="White" FontSize="18.667"/>
             <TextBlock x:Name="EpicCount" Height="30" Width="60" Text="0" Foreground="White" FontSize="18.667" Padding="5,0,0,0"/>
