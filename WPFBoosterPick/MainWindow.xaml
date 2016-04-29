@@ -44,9 +44,9 @@
         </Storyboard>
         <Storyboard x:Key="LightLogo">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="image1">
-                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-18"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="-27.282"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-59.469"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-27.282"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="image2">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
@@ -65,9 +65,9 @@
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="image2">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-2.494"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
             <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="image2">
@@ -75,12 +75,16 @@
                 <EasingPointKeyFrame KeyTime="0:0:0.7" Value="0.5,0.48"/>
                 <EasingPointKeyFrame KeyTime="0:0:1.5" Value="0.5,0.273"/>
             </PointAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="image1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-1.091"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-7.639"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-1.091"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard x:Name="AnimBooster_BeginStoryboard" Storyboard="{StaticResource AnimBooster}"/>
-            <BeginStoryboard Storyboard="{StaticResource AnimPulse}"/>
             <BeginStoryboard x:Name="LightLogo_BeginStoryboard" Storyboard="{StaticResource LightLogo}"/>
         </EventTrigger>
     </Window.Triggers>
@@ -109,40 +113,40 @@
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,10,0,0">
             <TextBlock x:Name="textBlock" Height="30" TextWrapping="Wrap" Text="Эпических карт:" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="250" Foreground="White" FontSize="18.667"/>
             <TextBlock x:Name="EpicCount" Height="30" Width="60" Text="0" Foreground="White" FontSize="18.667" Padding="5,0,0,0"/>
-            <Button x:Name="button_plus_epic" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
+            <Button x:Name="button_plus_epic" Click="button_plus_epic_Click" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
             <Button x:Name="button_minus_epic" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStyleMinus}" Margin="1,0,0,0" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,40,0,0">
             <TextBlock x:Name="textBlock2" Height="30" TextWrapping="Wrap" Text="Легендарных карт:" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="250" Foreground="White" FontSize="18.667"/>
             <TextBlock x:Name="LegCount" Height="30" Width="60" Text="0" Foreground="White" FontSize="18.667" Padding="5,0,0,0"/>
-            <Button x:Name="button_plus_leg" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
+            <Button x:Name="button_plus_leg" Click="button_plus_leg_Click" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
             <Button x:Name="button_minus_leg" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStyleMinus}" Margin="1,0,0,0" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,70,0,0">
             <TextBlock x:Name="textBlock3" Height="30" TextWrapping="Wrap" Text="Золотых простых карт: " VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="250" Foreground="White" FontSize="18.667"/>
             <TextBlock x:Name="GoldComCount" Height="30" Width="60" Text="0" Foreground="White" FontSize="18.667" Padding="5,0,0,0"/>
-            <Button x:Name="button_plus_gold_com" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
+            <Button x:Name="button_plus_gold_com" Click="button_plus_gold_com_Click" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
             <Button x:Name="button_minus_gold_com" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStyleMinus}" Margin="1,0,0,0" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,100,0,0">
             <TextBlock x:Name="textBlock34" Height="30" TextWrapping="Wrap" Text="Золотых редких карт:" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="250" Foreground="White" FontSize="18.667"/>
             <TextBlock x:Name="GoldRareCount" Height="30" Width="60" Text="0" Foreground="White" FontSize="18.667" Padding="5,0,0,0"/>
-            <Button x:Name="button_plus_gold_rare" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
+            <Button x:Name="button_plus_gold_rare" Click="button_plus_gold_rare_Click"  Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
             <Button x:Name="button_minus_gold_rare" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStyleMinus}" Margin="1,0,0,0" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,130,0,0">
             <TextBlock x:Name="textBlock324" Height="30" TextWrapping="Wrap" Text="Золотых эпических карт:" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="250" Foreground="White" FontSize="18.667"/>
             <TextBlock x:Name="GoldEpicCount" Height="30" Width="60" Text="0" Foreground="White" FontSize="18.667" Padding="5,0,0,0"/>
-            <Button x:Name="button_plus_gold_epic" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
+            <Button x:Name="button_plus_gold_epic" Click="button_plus_gold_epic_Click"  Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
             <Button x:Name="button_minus_gold_epic" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStyleMinus}" Margin="1,0,0,0" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,160,0,0">
             <TextBlock x:Name="textBlock354" Height="30" TextWrapping="Wrap" Text="Золотых легендарных карт:" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" Width="250" Foreground="White" FontSize="18.667"/>
             <TextBlock x:Name="GoldLegCount" Height="30" Width="60" Text="0" Foreground="White" FontSize="18.667" Padding="5,0,0,0"/>
-            <Button x:Name="button_plus_gold_leg" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
+            <Button x:Name="button_plus_gold_leg" Click="button_plus_gold_leg_Click"  Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStylePlus}" Margin="5,0,0,0" />
             <Button x:Name="button_minus_gold_leg" Content="Button" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{DynamicResource ButtonStyleMinus}" Margin="1,0,0,0" />
         </StackPanel>
-        <Image x:Name="image1" Source="Resources/Magic.png" VerticalAlignment="Bottom" Height="322" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,-90" Opacity="0">
+        <Image x:Name="image1" Source="Resources/Magic.png" VerticalAlignment="Bottom" Height="270" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,-90" Opacity="0">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

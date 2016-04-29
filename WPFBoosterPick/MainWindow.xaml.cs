@@ -25,17 +25,49 @@ namespace WPFBoosterPick
         {
             InitializeComponent();
             (Resources["AnimBooster"] as Storyboard).Completed += new EventHandler(Refresh_anim);
-            (Resources["AnimPulse"] as Storyboard).Completed += Pulse_Completed;
-        }
-
-        private void Pulse_Completed(object sender, EventArgs e)
-        {
-            (Resources["AnimPulse"] as Storyboard).Begin();
         }
 
         private void Refresh_anim(object sender, EventArgs e)
         {
             (Resources["AnimBooster"] as Storyboard).Begin();
+        }
+        private void Refresh_Pulse()
+        {
+            (Resources["AnimPulse"] as Storyboard).Begin();
+        }
+        private void Refresh_Logo()
+        {
+            (Resources["LightLogo"] as Storyboard).Begin();
+        }
+
+        private void button_plus_epic_Click(object sender, RoutedEventArgs e)
+        {
+            Refresh_Pulse();
+        }
+
+        private void button_plus_leg_Click(object sender, RoutedEventArgs e)
+        {
+            Refresh_Pulse();
+        }
+
+        private void button_plus_gold_com_Click(object sender, RoutedEventArgs e)
+        {
+            Refresh_Pulse();
+        }
+
+        private void button_plus_gold_rare_Click(object sender, RoutedEventArgs e)
+        {
+            Refresh_Pulse();
+        }
+
+        private void button_plus_gold_epic_Click(object sender, RoutedEventArgs e)
+        {
+            Refresh_Logo();
+        }
+
+        private void button_plus_gold_leg_Click(object sender, RoutedEventArgs e)
+        {
+            Refresh_Logo();
         }
     }
 }
