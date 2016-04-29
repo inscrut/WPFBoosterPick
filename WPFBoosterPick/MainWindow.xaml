@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WPFBoosterPick"
         mc:Ignorable="d"
         Background="Black"
-        Title="WPFBoosterPick" Height="400" Width="390">
+        Title="WPFBoosterPick" Height="400" Width="390"
+        ResizeMode="CanMinimize">
     <Window.Resources>
         <Storyboard x:Key="AnimBooster">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="image">
@@ -89,7 +90,7 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid>
-        <Image Source="Resources/background.jpg" Margin="-77.476,0,-146.236,10" HorizontalAlignment="Left" Width="605.712"/>
+        <Image Source="Resources/background.jpg" Margin="-77,0,-142,0" HorizontalAlignment="Left" Width="601"/>
         <Image x:Name="image3" Source="Resources/Light.png" Margin="-122.16,72.182,150.933,-24.182" Opacity="0" d:LayoutOverrides="Width" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
