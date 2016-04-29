@@ -19,15 +19,27 @@
         </Storyboard>
         <Storyboard x:Key="AnimPulse">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="image">
-                <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="100"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="90"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="70"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image3">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="image3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="4.365"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="10.912"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="3.491"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="3.273"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="image3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="10.912"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="11.131"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="12.004"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="LightLogo">
@@ -74,8 +86,17 @@
     </Window.Triggers>
     <Grid>
         <Image Source="Resources/background.jpg" Margin="-77.476,0,-146.236,10" HorizontalAlignment="Left" Width="605.712"/>
-        <Image x:Name="image3" Source="Resources/Light.png" Margin="-115.61,82.637,144.389,-34.637" Opacity="0" d:LayoutOverrides="Width"/>
-        <Image x:Name="image" Source="Resources/Booster.png" Height="90" VerticalAlignment="Bottom" Style="{DynamicResource ImageStyle}" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Opacity="0.85" Margin="25,0,0,80">
+        <Image x:Name="image3" Source="Resources/Light.png" Margin="-122.16,72.182,150.933,-24.182" Opacity="0" d:LayoutOverrides="Width" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="image" Source="Resources/Booster.png" Height="70" VerticalAlignment="Bottom" Style="{DynamicResource ImageStyle}" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Margin="30,0,0,90">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
