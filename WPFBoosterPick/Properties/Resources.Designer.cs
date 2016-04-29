@@ -73,6 +73,16 @@ namespace WPFBoosterPick.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Fire {
+            get {
+                object obj = ResourceManager.GetObject("Fire", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Light {
             get {
                 object obj = ResourceManager.GetObject("Light", resourceCulture);
@@ -86,6 +96,16 @@ namespace WPFBoosterPick.Properties {
         public static System.Drawing.Bitmap logoOldGods {
             get {
                 object obj = ResourceManager.GetObject("logoOldGods", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Magic {
+            get {
+                object obj = ResourceManager.GetObject("Magic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
