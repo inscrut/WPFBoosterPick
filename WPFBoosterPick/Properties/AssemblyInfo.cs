@@ -8,12 +8,12 @@ using System.Windows;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("WPFBoosterPick")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Booster picker")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("none")]
 [assembly: AssemblyProduct("WPFBoosterPick")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © fb30ea80623fba00db118c07ff640ecd 2016")]
+[assembly: AssemblyTrademark("none")]
 [assembly: AssemblyCulture("")]
 
 // Параметр ComVisible со значением FALSE делает типы в сборке невидимыми 
